@@ -218,6 +218,131 @@
     .modules { grid-template-columns: 1fr; }
   }
 
+  /* === 雙班並列 === */
+  .tiers-section { max-width: 1200px; }
+  .tier-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 40px;
+  }
+  .tier {
+    background: linear-gradient(160deg, #15151f, #0a0a0f);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 36px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .tier.advanced {
+    border-color: var(--gold);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
+  }
+  .tier.advanced::before {
+    content: "▲ 超業必修";
+    position: absolute;
+    top: 18px;
+    right: -32px;
+    background: var(--gold);
+    color: #1a1a25;
+    padding: 4px 36px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transform: rotate(38deg);
+  }
+  .tier-tag {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .tier h3 {
+    font-size: 26px;
+    color: var(--gold-light);
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .tier .tier-sub {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .tier-modules {
+    list-style: none;
+    margin: 24px 0 28px;
+    border-top: 1px solid var(--line);
+    padding-top: 8px;
+  }
+  .tier-modules li {
+    border-bottom: 1px solid var(--line);
+    padding: 16px 0;
+  }
+  .tier-modules li .m-num {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .tier-modules li .m-pain {
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .tier-modules li .m-gain {
+    color: var(--gold-light);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .tier-modules li .m-gain::before {
+    content: "→ ";
+    color: var(--accent);
+  }
+  .tier-price {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 20px;
+  }
+  .tier-price .strike {
+    color: var(--muted);
+    text-decoration: line-through;
+    font-size: 14px;
+  }
+  .tier-price .now {
+    color: var(--gold-light);
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 4px;
+  }
+  .tier-price .now small {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--muted);
+  }
+  .tier .btn-tier {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: #1a1a25;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 14px;
+    border-radius: 8px;
+    transition: transform .2s;
+  }
+  .tier .btn-tier:hover { transform: translateY(-2px); }
+  @media (max-width: 768px) {
+    .tier-grid { grid-template-columns: 1fr; }
+  }
+
   /* === 適合誰 === */
   .who {
     background: var(--bg-2);
@@ -474,10 +599,10 @@
   <img class="cover" src="cover.png" alt="房仲人機協作全攻略" />
   <div class="hero-cta">
     <h1>除了跟客戶面對面以外的所有事情，<br/>都該讓 AI 來解決</h1>
-    <p class="sub">12 堂課、3 大主軸、1 套可複製的 AI 作業系統 — 專為房仲業務／店長設計，把你從「打雜的業務」升級成「會指揮機器人軍團的房仲」。</p>
+    <p class="sub">兩個班級任你挑：<strong style="color:var(--gold-light)">「AI 小白初階班」</strong>幫你打底起步、<strong style="color:var(--gold-light)">「AI 超業進階班」</strong>讓你直接超車。專為房仲業務／店長設計，把你從「打雜的業務」升級成「會指揮機器人軍團的房仲」。</p>
     <div class="hero-meta">
-      <div><strong>12+</strong>實戰模組</div>
-      <div><strong>10</strong>大房仲痛點 × AI 解法</div>
+      <div><strong>2</strong>個班級任選</div>
+      <div><strong>13</strong>堂實戰模組</div>
       <div><strong>3</strong>大事業護城河</div>
     </div>
     <a href="https://lin.ee/rlPLgjV" target="_blank" rel="noopener" class="btn">立即搶先報名</a>
@@ -527,82 +652,110 @@
   </div>
 </section>
 
-<!-- 課程模組 -->
-<section>
-  <h2 class="section-title">12 堂課，從心法到實戰一次補齊</h2>
-  <p class="section-sub">每一堂課都從「房仲現場痛點」切入，不講虛的、不繞遠路。</p>
-  <div class="modules">
+<!-- 兩班並列 -->
+<section class="tiers-section">
+  <h2 class="section-title">兩個班級，依你的階段選擇</h2>
+  <p class="section-sub">從零起步看「初階班」，已經會用 AI 想再上一層樓看「進階班」。</p>
 
-    <div class="module">
-      <span class="label">MODULE 01</span>
-      <h4>還在用「老方法」拼業績，不知道同業已經一個人做三個人的量？</h4>
-      <div class="gain">建立 AI 時代房仲的作業心法，從根本翻轉你的工作節奏，讓「省時間」變成你的競爭優勢。</div>
+  <div class="tier-grid">
+
+    <!-- 初階班 -->
+    <div class="tier">
+      <span class="tier-tag">CLASS 01｜入門起步</span>
+      <h3>AI 小白初階班</h3>
+      <p class="tier-sub">從零開始的房仲 AI 起手式 — 7 堂課，把 AI 變成你日常作業的標配</p>
+
+      <ul class="tier-modules">
+        <li>
+          <span class="m-num">01</span>
+          <p class="m-pain">還在用人腦扛全公司的事，但同業已經把 AI 當員工在用？</p>
+          <p class="m-gain">AI 時代房仲協作心法 — 從根本建立「人機協作」作業流，重塑你的工作節奏。</p>
+        </li>
+        <li>
+          <span class="m-num">02</span>
+          <p class="m-pain">寫出來的文案跟全公司同業長得一樣，客戶滑過去都不會停？</p>
+          <p class="m-gain">打造跳脫大眾化的文案 — 跳開萬年模板，建立你個人辨識度的文字風格。</p>
+        </li>
+        <li>
+          <span class="m-num">03</span>
+          <p class="m-pain">拍照拍得像鬼屋，廣告丟出去沒一通電話、好物件被埋沒？</p>
+          <p class="m-gain">打造高點擊物件照片 — AI 修圖／合成／光線重塑，讓案件照變廣告級。</p>
+        </li>
+        <li>
+          <span class="m-num">04</span>
+          <p class="m-pain">問 AI 老是答得文謅謅、不能用，問十次有八次要重寫？</p>
+          <p class="m-gain">AI 溝通術 — 3 種房仲專用提詞公式，問一次就給你能上戰場的答案。</p>
+        </li>
+        <li>
+          <span class="m-num">05</span>
+          <p class="m-pain">議價陷入僵局、價格永遠談不下來、簽約永遠多一刀？</p>
+          <p class="m-gain">打造「議價拉價」策略 — 用 AI 演練拉價／砍價對話，預判每個彎怎麼轉。</p>
+        </li>
+        <li>
+          <span class="m-num">06</span>
+          <p class="m-pain">要交報告做提案，PPT、Excel 圖表做到凌晨還是醜到不敢交？</p>
+          <p class="m-gain">快速製作專業圖表 — 一句話自動產出行情、商圈、社區比較圖。</p>
+        </li>
+        <li>
+          <span class="m-num">07</span>
+          <p class="m-pain">屋主不給平面圖、客戶看不懂格局、案件就此卡死？</p>
+          <p class="m-gain">格局圖速成 — AI 自動生成 2D／3D 格局圖，5 秒幫客戶搞懂空間。</p>
+        </li>
+      </ul>
+
+      <div class="tier-price">
+        <div class="strike">原價 NT$ 3,600 ／ 人</div>
+        <div class="now">NT$ 1,500 <small>／ 早鳥優惠</small></div>
+      </div>
+
+      <a href="https://lin.ee/rlPLgjV" target="_blank" rel="noopener" class="btn-tier">加 LINE 報名初階班</a>
     </div>
 
-    <div class="module">
-      <span class="label">MODULE 02</span>
-      <h4>聽過一堆 AI 工具，但永遠不知道該用哪一個，每天都在亂槍打鳥？</h4>
-      <div class="gain">一張房仲專用的 AI 工具對照表，3 秒選對工具、選對場景，再也不用每樣都摸一遍。</div>
-    </div>
+    <!-- 進階班 -->
+    <div class="tier advanced">
+      <span class="tier-tag">CLASS 02｜超業加速</span>
+      <h3>AI 超業進階班</h3>
+      <p class="tier-sub">已經會用 AI 的房仲再升級 — 6 堂課，把 AI 變成你的事業護城河</p>
 
-    <div class="module">
-      <span class="label">MODULE 03</span>
-      <h4>問 AI 老是答得文謅謅、不能用，問十次有八次要重寫？</h4>
-      <div class="gain">3 種房仲專用提詞公式（指令式／角色式／流程式），讓 AI 一次就給你能上戰場的答案。</div>
-    </div>
+      <ul class="tier-modules">
+        <li>
+          <span class="m-num">01</span>
+          <p class="m-pain">好物件靠拍照賣，但每張修到天荒地老、效率上不去？</p>
+          <p class="m-gain">10 倍速照片精修術 — AI 批次修圖 SOP，30 張照片 10 分鐘搞定。</p>
+        </li>
+        <li>
+          <span class="m-num">02</span>
+          <p class="m-pain">第一次見客戶氣氛永遠尬，破冰永遠卡、信任永遠建不起來？</p>
+          <p class="m-gain">AI 讀心術｜建立完美第一印象 — 用 AI 預判客戶背景／興趣／痛點，5 分鐘贏得信任。</p>
+        </li>
+        <li>
+          <span class="m-num">03</span>
+          <p class="m-pain">每次重大談判前心裡沒底，臨場狀況都靠運氣硬扛？</p>
+          <p class="m-gain">AI 極限沙盤演練 — 議價／簽約／轉介／售後全情境陪練，演到你能背。</p>
+        </li>
+        <li>
+          <span class="m-num">04</span>
+          <p class="m-pain">DM 發出去石沉大海，連已讀都沒有？</p>
+          <p class="m-gain">爆款 DM 製作 — AI 公式拆解標題、開場、CTA，讓客戶讀到最後願意回你。</p>
+        </li>
+        <li>
+          <span class="m-num">05</span>
+          <p class="m-pain">一個人做業務分身乏術，黃金客戶永遠來不及追？</p>
+          <p class="m-gain">打造專業護城河｜AI 顧問團隊 — 市調員、文案手、議價教練，24 小時替你輪班。</p>
+        </li>
+        <li>
+          <span class="m-num">06</span>
+          <p class="m-pain">空屋、毛胚屋拍起來冷冰冰，買方完全沒感覺？</p>
+          <p class="m-gain">房產影音魔術師 — AI 房屋虛擬變裝＋影片合成，同案 3 種風格秒勾住客戶。</p>
+        </li>
+      </ul>
 
-    <div class="module">
-      <span class="label">MODULE 04</span>
-      <h4>屋主刁鑽、買方殺價、議價陷入僵局，每天都在重蹈覆轍？</h4>
-      <div class="gain">10 大房仲實戰場景 × AI 角色扮演陪練，讓 AI 當你 24 小時的陪練教練，把每個尬場景演到順。</div>
-    </div>
+      <div class="tier-price">
+        <div class="strike">原價 NT$ 3,600 ／ 人</div>
+        <div class="now">NT$ 1,500 <small>／ 早鳥優惠</small></div>
+      </div>
 
-    <div class="module">
-      <span class="label">MODULE 05</span>
-      <h4>談判被牽著走，價格永遠談不下來、簽約永遠多一刀？</h4>
-      <div class="gain">用 AI 預演對話、預判對方下一句，進場前就知道每個彎要怎麼轉，談判勝率拉滿。</div>
-    </div>
-
-    <div class="module">
-      <span class="label">MODULE 06</span>
-      <h4>一個人做業務分身乏術，黃金客戶永遠來不及追？</h4>
-      <div class="gain">打造你專屬的 AI 機器人軍團（市調員、文案手、議價教練），讓機器人 24 小時替你輪班、不請假、不抱怨。</div>
-    </div>
-
-    <div class="module">
-      <span class="label">MODULE 07</span>
-      <h4>要交報告、做提案，圖表做到凌晨還是醜到不敢交？</h4>
-      <div class="gain">一句話自動生成專業房仲圖表（行情走勢、商圈分析、社區比較），讓你 3 分鐘交出讓店長愛你的提案。</div>
-    </div>
-
-    <div class="module">
-      <span class="label">MODULE 08</span>
-      <h4>每次寫廣告都卡關，寫出來像物件 spec 表，沒感情也沒人問？</h4>
-      <div class="gain">AI 廣告文案生成秘訣：5 分鐘產出 10 版有溫度、有故事的文案，讓客戶想點進來。</div>
-    </div>
-
-    <div class="module">
-      <span class="label">MODULE 09</span>
-      <h4>寫出來的文案跟全公司同業長得一樣，客戶滑過去都不會停？</h4>
-      <div class="gain">跳脫「同業相似度 90%」的萬年模板，建立你個人辨識度的文字風格，讓人一眼就認出是你。</div>
-    </div>
-
-    <div class="module">
-      <span class="label">MODULE 10</span>
-      <h4>拍照拍得像鬼屋，廣告丟出去沒人問，好物件被埋沒？</h4>
-      <div class="gain">用 AI 修圖、合成、光線重塑，把案件照拉成廣告級視覺，讓客戶打爆你的電話。</div>
-    </div>
-
-    <div class="module">
-      <span class="label">MODULE 11</span>
-      <h4>屋主不給平面圖、原始格局跟現況有落差，客戶看不懂？</h4>
-      <div class="gain">用 AI 自動生成 2D／3D 格局圖，讓客戶 5 秒搞懂空間規劃，不再卡在「看不懂」這關。</div>
-    </div>
-
-    <div class="module">
-      <span class="label">MODULE 12</span>
-      <h4>空屋、毛胚屋拍起來冷冰冰，客戶想像不出住起來的樣子？</h4>
-      <div class="gain">AI 房屋虛擬變裝（裝潢／家具／燈光），同一個案件做 3 種風格情境影片，讓客戶秒被勾住。</div>
+      <a href="https://lin.ee/rlPLgjV" target="_blank" rel="noopener" class="btn-tier">加 LINE 報名進階班</a>
     </div>
 
   </div>
@@ -617,11 +770,11 @@
       <div class="who-yes">
         <h3>非常適合你</h3>
         <ul>
-          <li>有經驗的房仲業務，但被文書工作綁死</li>
-          <li>業績想做大、但每天只有 24 小時的人</li>
-          <li>店長／組長，想讓整組業績可複製、可預測</li>
-          <li>新人房仲，想用 AI 槓桿快速追上資深</li>
-          <li>願意花時間建立系統，不想永遠靠運氣</li>
+          <li><strong style="color:var(--gold-light)">初階班</strong>：完全沒碰過 AI、想用最快速度上手的房仲新人</li>
+          <li><strong style="color:var(--gold-light)">初階班</strong>：被文書／文案／拍照綁死，每天加班的業務</li>
+          <li><strong style="color:var(--gold-light)">進階班</strong>：已會用 ChatGPT 但「用得卡卡」，想再上一層樓的超業</li>
+          <li><strong style="color:var(--gold-light)">進階班</strong>：店長／組長，想複製「可預測業績」流程的領導者</li>
+          <li><strong style="color:var(--gold-light)">兩班皆適</strong>：不想永遠靠運氣、想建立系統的房仲</li>
         </ul>
       </div>
       <div class="who-no">
@@ -704,14 +857,14 @@
 <!-- 最終 CTA -->
 <section class="final-cta" id="enroll">
   <h2>掌握第一波時代紅利</h2>
-  <p>當別人還在問「AI 是什麼」，你已經在用 AI 收成了。</p>
+  <p>當別人還在問「AI 是什麼」，你已經在用 AI 收成了。<br/>無論你選初階或進階，今天加 LINE 都鎖定早鳥價 NT$ 1,500。</p>
   <div class="price-box">
-    <div class="strike">原價 NT$ 3,600 ／ 人</div>
-    <div class="now">NT$ 1,500 <small>／ 早鳥優惠價</small></div>
+    <div class="strike">原價 NT$ 3,600 ／ 班</div>
+    <div class="now">NT$ 1,500 <small>／ 早鳥優惠價（每班）</small></div>
   </div>
   <br/>
   <a href="https://lin.ee/rlPLgjV" target="_blank" rel="noopener" class="btn">加 LINE 鎖定早鳥價</a>
-  <p class="scarcity">⚠ 早鳥優惠限前 30 名，額滿即恢復原價 NT$ 3,600</p>
+  <p class="scarcity">⚠ 早鳥優惠限前 30 名（每班），額滿即恢復原價 NT$ 3,600</p>
 </section>
 
 <!-- FAQ -->
@@ -720,8 +873,13 @@
   <p class="section-sub">報名前先看完這幾題。</p>
 
   <div class="faq-item">
+    <h4>我該選初階班還是進階班？</h4>
+    <p>沒摸過 AI、或摸過但「沒在自己工作上跑出成果」 → 選<strong style="color:var(--gold-light)">初階班</strong>，建立完整作業基礎。已經會用 ChatGPT 寫文案、想再進一步把 AI 當顧問團、做沙盤演練、產影音 → 選<strong style="color:var(--gold-light)">進階班</strong>。兩班內容不重複，順序上初階打底、進階加速。</p>
+  </div>
+
+  <div class="faq-item">
     <h4>我完全沒碰過 AI 工具，跟得上嗎？</h4>
-    <p>跟得上。這堂課從「為什麼要用 AI」開始講，每個工具都有 SOP 步驟可照做，不需要程式背景。</p>
+    <p>跟得上。初階班就是為你而開，從「為什麼要用 AI」開始講，每個工具都有 SOP 步驟可照做，不需要程式背景。</p>
   </div>
 
   <div class="faq-item">
