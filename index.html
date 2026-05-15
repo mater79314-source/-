@@ -343,6 +343,76 @@
     .tier-grid { grid-template-columns: 1fr; }
   }
 
+  /* === 合報組 banner === */
+  .bundle-banner {
+    margin-top: 28px;
+    background: linear-gradient(135deg, var(--gold) 0%, #b8902c 100%);
+    border-radius: 14px;
+    padding: 32px 36px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 32px;
+    align-items: center;
+    color: #1a1a25;
+    box-shadow: 0 8px 40px rgba(212, 175, 55, 0.3);
+  }
+  .bundle-tag {
+    display: inline-block;
+    background: #1a1a25;
+    color: var(--gold-light);
+    padding: 4px 14px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .bundle-left h3 {
+    color: #1a1a25;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .bundle-left p {
+    color: #2a2a35;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .bundle-left strong {
+    color: #1a1a25;
+    background: rgba(255,255,255,0.4);
+    padding: 0 6px;
+    border-radius: 4px;
+  }
+  .bundle-right {
+    text-align: center;
+  }
+  .bundle-strike {
+    color: #4a4a55;
+    text-decoration: line-through;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .bundle-price {
+    color: #1a1a25;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .bundle-price small {
+    font-size: 14px;
+    font-weight: 400;
+    color: #2a2a35;
+  }
+  .bundle-banner .btn-tier {
+    background: #1a1a25;
+    color: var(--gold-light);
+  }
+  @media (max-width: 768px) {
+    .bundle-banner { grid-template-columns: 1fr; padding: 24px; }
+    .bundle-right { text-align: left; }
+  }
+
   /* === 適合誰 === */
   .who {
     background: var(--bg-2);
@@ -704,8 +774,7 @@
       </ul>
 
       <div class="tier-price">
-        <div class="strike">原價 NT$ 3,600 ／ 人</div>
-        <div class="now">NT$ 1,500 <small>／ 早鳥優惠</small></div>
+        <div class="now">NT$ 1,500 <small>／ 人</small></div>
       </div>
 
       <a href="https://lin.ee/rlPLgjV" target="_blank" rel="noopener" class="btn-tier">加 LINE 報名初階班</a>
@@ -751,13 +820,26 @@
       </ul>
 
       <div class="tier-price">
-        <div class="strike">原價 NT$ 3,600 ／ 人</div>
-        <div class="now">NT$ 1,500 <small>／ 早鳥優惠</small></div>
+        <div class="now">NT$ 2,500 <small>／ 人</small></div>
       </div>
 
       <a href="https://lin.ee/rlPLgjV" target="_blank" rel="noopener" class="btn-tier">加 LINE 報名進階班</a>
     </div>
 
+  </div>
+
+  <!-- 合報組合 -->
+  <div class="bundle-banner">
+    <div class="bundle-left">
+      <span class="bundle-tag">★ 最划算選擇</span>
+      <h3>兩班合報組｜AI 完整地圖</h3>
+      <p>初階打底＋進階加速，13 堂課一次到位。單買兩班 NT$ 4,000，<strong>合報只要 NT$ 3,600</strong>，當場省 NT$ 400。</p>
+    </div>
+    <div class="bundle-right">
+      <div class="bundle-strike">單買兩班 NT$ 4,000</div>
+      <div class="bundle-price">NT$ 3,600 <small>／ 人</small></div>
+      <a href="https://lin.ee/rlPLgjV" target="_blank" rel="noopener" class="btn-tier" style="margin-top:12px;">加 LINE 報名合報組</a>
+    </div>
   </div>
 </section>
 
@@ -857,14 +939,28 @@
 <!-- 最終 CTA -->
 <section class="final-cta" id="enroll">
   <h2>掌握第一波時代紅利</h2>
-  <p>當別人還在問「AI 是什麼」，你已經在用 AI 收成了。<br/>無論你選初階或進階，今天加 LINE 都鎖定早鳥價 NT$ 1,500。</p>
+  <p>當別人還在問「AI 是什麼」，你已經在用 AI 收成了。<br/>三種報名方案，加 LINE 直接告訴顧問你的選擇。</p>
   <div class="price-box">
-    <div class="strike">原價 NT$ 3,600 ／ 班</div>
-    <div class="now">NT$ 1,500 <small>／ 早鳥優惠價（每班）</small></div>
+    <div style="display:flex;flex-wrap:wrap;gap:24px;justify-content:center;align-items:flex-end;">
+      <div>
+        <div style="color:var(--muted);font-size:13px;">初階班</div>
+        <div class="now" style="font-size:28px;">NT$ 1,500</div>
+      </div>
+      <div style="color:var(--muted);font-size:24px;line-height:1;padding-bottom:6px;">＋</div>
+      <div>
+        <div style="color:var(--muted);font-size:13px;">進階班</div>
+        <div class="now" style="font-size:28px;">NT$ 2,500</div>
+      </div>
+      <div style="color:var(--muted);font-size:24px;line-height:1;padding-bottom:6px;">→</div>
+      <div>
+        <div style="color:var(--gold);font-size:13px;font-weight:700;">★ 兩班合報</div>
+        <div class="now" style="font-size:28px;">NT$ 3,600 <small style="color:var(--gold);">省 $400</small></div>
+      </div>
+    </div>
   </div>
   <br/>
-  <a href="https://lin.ee/rlPLgjV" target="_blank" rel="noopener" class="btn">加 LINE 鎖定早鳥價</a>
-  <p class="scarcity">⚠ 早鳥優惠限前 30 名（每班），額滿即恢復原價 NT$ 3,600</p>
+  <a href="https://lin.ee/rlPLgjV" target="_blank" rel="noopener" class="btn">加 LINE 立即報名</a>
+  <p class="scarcity">⚠ 早鳥名額有限，額滿即恢復原價</p>
 </section>
 
 <!-- FAQ -->
@@ -874,7 +970,7 @@
 
   <div class="faq-item">
     <h4>我該選初階班還是進階班？</h4>
-    <p>沒摸過 AI、或摸過但「沒在自己工作上跑出成果」 → 選<strong style="color:var(--gold-light)">初階班</strong>，建立完整作業基礎。已經會用 ChatGPT 寫文案、想再進一步把 AI 當顧問團、做沙盤演練、產影音 → 選<strong style="color:var(--gold-light)">進階班</strong>。兩班內容不重複，順序上初階打底、進階加速。</p>
+    <p>沒摸過 AI、或摸過但「沒在自己工作上跑出成果」 → 選<strong style="color:var(--gold-light)">初階班 NT$ 1,500</strong>，建立完整作業基礎。已經會用 ChatGPT 寫文案、想再進一步把 AI 當顧問團、做沙盤演練、產影音 → 選<strong style="color:var(--gold-light)">進階班 NT$ 2,500</strong>。兩班內容不重複，順序上初階打底、進階加速 — 想一次到位、不重複付費 → 直接選<strong style="color:var(--gold-light)">兩班合報 NT$ 3,600</strong>，當場省 NT$ 400。</p>
   </div>
 
   <div class="faq-item">
