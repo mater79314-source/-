@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>房仲人機協作全攻略｜AI 時代必備的業績槓桿 — 李天璽（天哥）</title>
+<meta name="description" content="除了跟客戶面對面以外的所有事情，都讓 AI 來解決。專為房仲設計的 12 堂實戰課，從 AI 讀心術、AI 顧問團、AI 印鈔機三大主軸，打造你的事業護城河。" />
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg-2: #12121a;
+    --gold: #d4af37;
+    --gold-light: #f5d97a;
+    --text: #e8e8e8;
+    --muted: #9a9aa3;
+    --accent: #c89a3a;
+    --line: #2a2a35;
+    --danger: #ff6b6b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--gold-light); text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  /* === Hero === */
+  .hero {
+    position: relative;
+    background: radial-gradient(ellipse at top, #1a1a2e 0%, #0a0a0f 60%);
+    text-align: center;
+    padding: 0;
+  }
+  .hero img.cover {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .hero-cta {
+    padding: 32px 20px 56px;
+  }
+  .hero-cta h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 12px;
+  }
+  .hero-cta p.sub {
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 640px;
+    margin: 0 auto 28px;
+  }
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .hero-meta div {
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .hero-meta strong {
+    display: block;
+    color: var(--gold-light);
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  /* === Sections === */
+  section {
+    padding: 72px 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  h2.section-title {
+    font-size: 30px;
+    color: var(--gold-light);
+    text-align: center;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  h2.section-title::before {
+    content: "▍";
+    color: var(--gold);
+    margin-right: 8px;
+  }
+  p.section-sub {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 48px;
+    font-size: 16px;
+  }
+
+  /* === 痛點區 === */
+  .pain {
+    background: var(--bg-2);
+    margin: 0;
+    max-width: none;
+  }
+  .pain-inner {
+    max-width: 840px;
+    margin: 0 auto;
+  }
+  .pain-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .pain-list li {
+    background: #1a1a25;
+    border-left: 3px solid var(--danger);
+    padding: 18px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #d8d8d8;
+  }
+  .pain-list li::before {
+    content: "✗ ";
+    color: var(--danger);
+    font-weight: 700;
+  }
+  @media (max-width: 640px) {
+    .pain-list { grid-template-columns: 1fr; }
+  }
+
+  /* === 三大主軸 === */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .pillar {
+    background: linear-gradient(160deg, #1a1a25, #0f0f17);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .pillar .num {
+    font-size: 14px;
+    color: var(--gold);
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+  }
+  .pillar h3 {
+    font-size: 22px;
+    color: var(--gold-light);
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .pillar p {
+    color: var(--muted);
+    font-size: 15px;
+  }
+  @media (max-width: 768px) {
+    .pillars { grid-template-columns: 1fr; }
+  }
+
+  /* === 課程模組 === */
+  .modules {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .module {
+    background: #15151f;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 24px;
+    transition: transform .2s, border-color .2s;
+  }
+  .module:hover {
+    transform: translateY(-3px);
+    border-color: var(--gold);
+  }
+  .module .label {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .module h4 {
+    font-size: 17px;
+    color: var(--text);
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .module .gain {
+    font-size: 14px;
+    color: var(--gold-light);
+    background: rgba(212, 175, 55, 0.06);
+    border-left: 2px solid var(--gold);
+    padding: 10px 12px;
+    border-radius: 4px;
+  }
+  .module .gain::before {
+    content: "→ 你會學會：";
+    display: block;
+    color: var(--accent);
+    font-size: 12px;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+  }
+  @media (max-width: 768px) {
+    .modules { grid-template-columns: 1fr; }
+  }
+
+  /* === 適合誰 === */
+  .who {
+    background: var(--bg-2);
+    max-width: none;
+  }
+  .who-inner {
+    max-width: 840px;
+    margin: 0 auto;
+  }
+  .who-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .who-grid > div {
+    padding: 20px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+  }
+  .who-yes {
+    background: rgba(212, 175, 55, 0.08);
+    border-left: 3px solid var(--gold);
+  }
+  .who-no {
+    background: rgba(255, 107, 107, 0.06);
+    border-left: 3px solid var(--danger);
+  }
+  .who-grid h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: var(--gold-light);
+  }
+  .who-no h3 { color: var(--danger); }
+  .who-grid ul { list-style: none; }
+  .who-grid li {
+    padding: 6px 0;
+    color: #d0d0d0;
+  }
+  .who-yes li::before { content: "✓ "; color: var(--gold); font-weight: 700; }
+  .who-no li::before  { content: "✗ "; color: var(--danger); font-weight: 700; }
+  @media (max-width: 640px) {
+    .who-grid { grid-template-columns: 1fr; }
+  }
+
+  /* === 學員見證 === */
+  .testimonials-section {
+    max-width: 1080px;
+  }
+  .pull-quotes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 32px 0 48px;
+  }
+  .pull-quote {
+    background: linear-gradient(160deg, #1a1a25, #0f0f17);
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+    padding: 24px;
+    position: relative;
+  }
+  .pull-quote::before {
+    content: "“";
+    position: absolute;
+    top: -8px;
+    left: 16px;
+    font-size: 60px;
+    color: var(--gold);
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+  .pull-quote p {
+    color: var(--gold-light);
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 12px 0 12px;
+  }
+  .pull-quote cite {
+    color: var(--muted);
+    font-size: 13px;
+    font-style: normal;
+    display: block;
+  }
+  @media (max-width: 768px) {
+    .pull-quotes { grid-template-columns: 1fr; }
+  }
+
+  .testimonial-grid {
+    column-count: 3;
+    column-gap: 16px;
+  }
+  .testimonial-card {
+    break-inside: avoid;
+    background: #1a1a25;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    transition: border-color .2s, transform .2s;
+  }
+  .testimonial-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+  }
+  .testimonial-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  @media (max-width: 1024px) { .testimonial-grid { column-count: 2; } }
+  @media (max-width: 640px)  { .testimonial-grid { column-count: 1; } }
+
+  /* === 講師 === */
+  .instructor {
+    text-align: center;
+  }
+  .instructor h3 {
+    font-size: 24px;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+  .instructor .title {
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .instructor-quotes {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: left;
+    background: var(--bg-2);
+    border-radius: 10px;
+    padding: 28px 32px;
+    border: 1px solid var(--line);
+  }
+  .instructor-quotes ul { list-style: none; }
+  .instructor-quotes li {
+    padding: 8px 0;
+    color: #d8d8d8;
+  }
+  .instructor-quotes li::before {
+    content: "▸ ";
+    color: var(--gold);
+  }
+
+  /* === 最終 CTA === */
+  .final-cta {
+    background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0f 100%);
+    text-align: center;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    max-width: none;
+    padding: 80px 24px;
+  }
+  .final-cta h2 {
+    font-size: 32px;
+    color: var(--gold-light);
+    margin-bottom: 12px;
+  }
+  .final-cta p {
+    color: var(--muted);
+    margin-bottom: 32px;
+    font-size: 17px;
+  }
+  .price-box {
+    display: inline-block;
+    background: rgba(212, 175, 55, 0.05);
+    border: 1px solid var(--gold);
+    border-radius: 12px;
+    padding: 24px 40px;
+    margin-bottom: 28px;
+  }
+  .price-box .strike {
+    color: var(--muted);
+    text-decoration: line-through;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .price-box .now {
+    color: var(--gold-light);
+    font-size: 36px;
+    font-weight: 700;
+  }
+  .price-box .now small {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--muted);
+  }
+  .btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: #1a1a25;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 18px 56px;
+    border-radius: 8px;
+    transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
+    cursor: pointer;
+    border: none;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(212, 175, 55, 0.45);
+  }
+  .scarcity {
+    margin-top: 20px;
+    color: var(--danger);
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  /* === FAQ === */
+  .faq-item {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+  }
+  .faq-item h4 {
+    color: var(--gold-light);
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .faq-item h4::before {
+    content: "Q. ";
+    color: var(--gold);
+  }
+  .faq-item p {
+    color: #c8c8c8;
+    font-size: 15px;
+  }
+  .faq-item p::before {
+    content: "A. ";
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--muted);
+    font-size: 13px;
+    border-top: 1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <img class="cover" src="cover.png" alt="房仲人機協作全攻略" />
+  <div class="hero-cta">
+    <h1>除了跟客戶面對面以外的所有事情，<br/>都該讓 AI 來解決</h1>
+    <p class="sub">12 堂課、3 大主軸、1 套可複製的 AI 作業系統 — 專為房仲業務／店長設計，把你從「打雜的業務」升級成「會指揮機器人軍團的房仲」。</p>
+    <div class="hero-meta">
+      <div><strong>12+</strong>實戰模組</div>
+      <div><strong>10</strong>大房仲痛點 × AI 解法</div>
+      <div><strong>3</strong>大事業護城河</div>
+    </div>
+    <a href="https://lin.ee/rlPLgjV" target="_blank" rel="noopener" class="btn">立即搶先報名</a>
+  </div>
+</header>
+
+<!-- 痛點區 -->
+<section class="pain">
+  <div class="pain-inner">
+    <h2 class="section-title">這些場景，你是不是天天在演？</h2>
+    <p class="section-sub">如果以下有 3 個以上中槍，你就是這堂課要的人。</p>
+    <ul class="pain-list">
+      <li>每天文書工作做到半夜，沒時間真正接觸客戶</li>
+      <li>聽過 ChatGPT、Claude，但永遠不知道哪個工具該用在哪</li>
+      <li>叫 AI 寫東西，10 次有 8 次得重寫到自己崩潰</li>
+      <li>議價談判被屋主／買方牽著走，每次都多砍一刀</li>
+      <li>同公司同業文案長得跟你一樣，客戶滑過去從不停留</li>
+      <li>案件照片拍得像鬼屋，廣告丟出去沒一通電話</li>
+      <li>屋主不給平面圖，客戶看不懂格局，案件卡死</li>
+      <li>空屋、毛胚屋拍起來冷冰冰，買方完全沒感覺</li>
+      <li>一個人做業務，永遠分身乏術、漏掉黃金客戶</li>
+      <li>業績忽高忽低，沒有可複製的流程，一切靠運氣</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 三大主軸 -->
+<section>
+  <h2 class="section-title">這堂課只教跟業績最相關的三大主軸</h2>
+  <p class="section-sub">不是教你變成 AI 工程師，是教你變成「會用 AI 賺錢的房仲」。</p>
+  <div class="pillars">
+    <div class="pillar">
+      <div class="num">PILLAR 01</div>
+      <h3>AI 讀心術</h3>
+      <p>讓你進場前就預判屋主、買方下一句要說什麼，談判勝率提高 10 倍。</p>
+    </div>
+    <div class="pillar">
+      <div class="num">PILLAR 02</div>
+      <h3>AI 顧問團</h3>
+      <p>打造你專屬的機器人軍團 — 市調員、文案手、議價教練，24 小時替你輪班。</p>
+    </div>
+    <div class="pillar">
+      <div class="num">PILLAR 03</div>
+      <h3>AI 印鈔機</h3>
+      <p>把普通案件包裝成高點擊案件，讓客戶看一眼就想打給你。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 課程模組 -->
+<section>
+  <h2 class="section-title">12 堂課，從心法到實戰一次補齊</h2>
+  <p class="section-sub">每一堂課都從「房仲現場痛點」切入，不講虛的、不繞遠路。</p>
+  <div class="modules">
+
+    <div class="module">
+      <span class="label">MODULE 01</span>
+      <h4>還在用「老方法」拼業績，不知道同業已經一個人做三個人的量？</h4>
+      <div class="gain">建立 AI 時代房仲的作業心法，從根本翻轉你的工作節奏，讓「省時間」變成你的競爭優勢。</div>
+    </div>
+
+    <div class="module">
+      <span class="label">MODULE 02</span>
+      <h4>聽過一堆 AI 工具，但永遠不知道該用哪一個，每天都在亂槍打鳥？</h4>
+      <div class="gain">一張房仲專用的 AI 工具對照表，3 秒選對工具、選對場景，再也不用每樣都摸一遍。</div>
+    </div>
+
+    <div class="module">
+      <span class="label">MODULE 03</span>
+      <h4>問 AI 老是答得文謅謅、不能用，問十次有八次要重寫？</h4>
+      <div class="gain">3 種房仲專用提詞公式（指令式／角色式／流程式），讓 AI 一次就給你能上戰場的答案。</div>
+    </div>
+
+    <div class="module">
+      <span class="label">MODULE 04</span>
+      <h4>屋主刁鑽、買方殺價、議價陷入僵局，每天都在重蹈覆轍？</h4>
+      <div class="gain">10 大房仲實戰場景 × AI 角色扮演陪練，讓 AI 當你 24 小時的陪練教練，把每個尬場景演到順。</div>
+    </div>
+
+    <div class="module">
+      <span class="label">MODULE 05</span>
+      <h4>談判被牽著走，價格永遠談不下來、簽約永遠多一刀？</h4>
+      <div class="gain">用 AI 預演對話、預判對方下一句，進場前就知道每個彎要怎麼轉，談判勝率拉滿。</div>
+    </div>
+
+    <div class="module">
+      <span class="label">MODULE 06</span>
+      <h4>一個人做業務分身乏術，黃金客戶永遠來不及追？</h4>
+      <div class="gain">打造你專屬的 AI 機器人軍團（市調員、文案手、議價教練），讓機器人 24 小時替你輪班、不請假、不抱怨。</div>
+    </div>
+
+    <div class="module">
+      <span class="label">MODULE 07</span>
+      <h4>要交報告、做提案，圖表做到凌晨還是醜到不敢交？</h4>
+      <div class="gain">一句話自動生成專業房仲圖表（行情走勢、商圈分析、社區比較），讓你 3 分鐘交出讓店長愛你的提案。</div>
+    </div>
+
+    <div class="module">
+      <span class="label">MODULE 08</span>
+      <h4>每次寫廣告都卡關，寫出來像物件 spec 表，沒感情也沒人問？</h4>
+      <div class="gain">AI 廣告文案生成秘訣：5 分鐘產出 10 版有溫度、有故事的文案，讓客戶想點進來。</div>
+    </div>
+
+    <div class="module">
+      <span class="label">MODULE 09</span>
+      <h4>寫出來的文案跟全公司同業長得一樣，客戶滑過去都不會停？</h4>
+      <div class="gain">跳脫「同業相似度 90%」的萬年模板，建立你個人辨識度的文字風格，讓人一眼就認出是你。</div>
+    </div>
+
+    <div class="module">
+      <span class="label">MODULE 10</span>
+      <h4>拍照拍得像鬼屋，廣告丟出去沒人問，好物件被埋沒？</h4>
+      <div class="gain">用 AI 修圖、合成、光線重塑，把案件照拉成廣告級視覺，讓客戶打爆你的電話。</div>
+    </div>
+
+    <div class="module">
+      <span class="label">MODULE 11</span>
+      <h4>屋主不給平面圖、原始格局跟現況有落差，客戶看不懂？</h4>
+      <div class="gain">用 AI 自動生成 2D／3D 格局圖，讓客戶 5 秒搞懂空間規劃，不再卡在「看不懂」這關。</div>
+    </div>
+
+    <div class="module">
+      <span class="label">MODULE 12</span>
+      <h4>空屋、毛胚屋拍起來冷冰冰，客戶想像不出住起來的樣子？</h4>
+      <div class="gain">AI 房屋虛擬變裝（裝潢／家具／燈光），同一個案件做 3 種風格情境影片，讓客戶秒被勾住。</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 適合誰 -->
+<section class="who">
+  <div class="who-inner">
+    <h2 class="section-title">這堂課適合誰？</h2>
+    <p class="section-sub">與其問「我能不能學」，不如先看你是不是這群人。</p>
+    <div class="who-grid">
+      <div class="who-yes">
+        <h3>非常適合你</h3>
+        <ul>
+          <li>有經驗的房仲業務，但被文書工作綁死</li>
+          <li>業績想做大、但每天只有 24 小時的人</li>
+          <li>店長／組長，想讓整組業績可複製、可預測</li>
+          <li>新人房仲，想用 AI 槓桿快速追上資深</li>
+          <li>願意花時間建立系統，不想永遠靠運氣</li>
+        </ul>
+      </div>
+      <div class="who-no">
+        <h3>不適合你</h3>
+        <ul>
+          <li>覺得「我這樣做了 20 年都沒事」的人</li>
+          <li>只想要一個現成腳本，不想動腦的人</li>
+          <li>期待學完就能躺著賺、不用再經營客戶</li>
+          <li>排斥任何科技工具，連 LINE 都不想學</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 學員見證 -->
+<section class="testimonials-section">
+  <h2 class="section-title">這群房仲，已經先你一步上完課了</h2>
+  <p class="section-sub">真實學員 FB 公開貼文 — 從台南、桃竹苗、台北到台中，全台房仲都在學。</p>
+
+  <!-- 金句牆 -->
+  <div class="pull-quotes">
+    <div class="pull-quote">
+      <p>不是 AI 取代我，是「會用 AI 的人」取代我。</p>
+      <cite>— 秦千雅｜台中海線房仲</cite>
+    </div>
+    <div class="pull-quote">
+      <p>市場上的現實 — 不進則退。</p>
+      <cite>— 鄭郁潔｜磐石團隊</cite>
+    </div>
+    <div class="pull-quote">
+      <p>懂得運用工具，就是拉開差距的關鍵。</p>
+      <cite>— Chiu Chiu｜台南仁德店‧高鐵特區店</cite>
+    </div>
+    <div class="pull-quote">
+      <p>我從略懂到懂，這中間的差異真的非常大，可以更省事更精準地與 AI 夥伴共事。</p>
+      <cite>— 林淑梅｜桃竹苗經委會</cite>
+    </div>
+    <div class="pull-quote">
+      <p>一場 AI 的生死搏鬥 — 你學會了嗎？</p>
+      <cite>— 王妏涓｜台中</cite>
+    </div>
+    <div class="pull-quote">
+      <p>謝謝天璽學長分享 AI 工具，真的超實用，直接學起來。</p>
+      <cite>— 吳宥穎</cite>
+    </div>
+  </div>
+
+  <!-- 真實 FB 截圖牆 -->
+  <div class="testimonial-grid">
+    <div class="testimonial-card"><img src="testimonials/01-chiuchiu.jpg" alt="Chiu Chiu 學員見證" loading="lazy" /></div>
+    <div class="testimonial-card"><img src="testimonials/08-chin.jpg" alt="秦千雅 學員見證" loading="lazy" /></div>
+    <div class="testimonial-card"><img src="testimonials/04-lin.jpg" alt="林淑梅 學員見證" loading="lazy" /></div>
+    <div class="testimonial-card"><img src="testimonials/05-cheng.jpg" alt="鄭郁潔 學員見證" loading="lazy" /></div>
+    <div class="testimonial-card"><img src="testimonials/07-wang.jpg" alt="王妏涓 學員見證" loading="lazy" /></div>
+    <div class="testimonial-card"><img src="testimonials/06-wu.jpg" alt="吳宥穎 學員見證" loading="lazy" /></div>
+    <div class="testimonial-card"><img src="testimonials/02-huang.jpg" alt="黃聖富 現場分享" loading="lazy" /></div>
+    <div class="testimonial-card"><img src="testimonials/03-tianxi-self.jpg" alt="台北場現場" loading="lazy" /></div>
+    <div class="testimonial-card"><img src="testimonials/09-jhih.jpg" alt="Jhih Ciao 學員見證" loading="lazy" /></div>
+  </div>
+</section>
+
+<!-- 講師 -->
+<section class="instructor">
+  <h2 class="section-title">關於你的教練</h2>
+  <h3>李天璽（天哥）</h3>
+  <p class="title">太平洋房屋 七期惠文店店長｜AI 自動化系統架構師</p>
+  <div class="instructor-quotes">
+    <ul>
+      <li>房地產資歷 10 年以上，經紀人 → 店長 → 經營者完整路徑</li>
+      <li><strong style="color:var(--gold-light)">2026 年 4 月已受太平洋房屋總部邀請</strong>，巡迴台南、桃竹苗、台北、台中四大區開講「房仲 AI 革命」</li>
+      <li>用 AI 重建整間店的工作流（招募、案件評分、業績復盤、社群發文全自動）</li>
+      <li>常用工具：Notion、n8n、Claude、Lovable、HeyGen、Canva AI</li>
+      <li>信奉「Vibe Coding」：用自然語言指令把 AI 變成生產力工具</li>
+      <li>諾亞房舟（Noah's Ark）創辦人，專為房仲業設計 AI 解決方案</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 最終 CTA -->
+<section class="final-cta" id="enroll">
+  <h2>掌握第一波時代紅利</h2>
+  <p>當別人還在問「AI 是什麼」，你已經在用 AI 收成了。</p>
+  <div class="price-box">
+    <div class="strike">原價 NT$ 3,600 ／ 人</div>
+    <div class="now">NT$ 1,500 <small>／ 早鳥優惠價</small></div>
+  </div>
+  <br/>
+  <a href="https://lin.ee/rlPLgjV" target="_blank" rel="noopener" class="btn">加 LINE 鎖定早鳥價</a>
+  <p class="scarcity">⚠ 早鳥優惠限前 30 名，額滿即恢復原價 NT$ 3,600</p>
+</section>
+
+<!-- FAQ -->
+<section>
+  <h2 class="section-title">常見問題</h2>
+  <p class="section-sub">報名前先看完這幾題。</p>
+
+  <div class="faq-item">
+    <h4>我完全沒碰過 AI 工具，跟得上嗎？</h4>
+    <p>跟得上。這堂課從「為什麼要用 AI」開始講，每個工具都有 SOP 步驟可照做，不需要程式背景。</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>課程是線上還是實體？</h4>
+    <p>以線上影片為主（無限次回放），搭配專屬學員社群，可以隨時提問、看別人怎麼做。</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>學完之後 AI 工具會不會一直變？我學的會不會過時？</h4>
+    <p>工具會變，但「人機協作的心法」不會變。這堂課的重點是教你「思考方式」，工具升級你也跟得上。</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>我是店長／經營者，學了能用在管理上嗎？</h4>
+    <p>可以。模組 6（機器人軍團）跟模組 7（專業圖表）特別適合管理者，能直接用在團隊賦能與業績復盤。</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>有不滿意退款嗎？</h4>
+    <p>開課後 7 天內，如果你看完前 3 堂覺得「沒用、不適合」，全額退費，不問理由。</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 諾亞房舟 Noah's Ark｜專為房仲設計的 AI 解決方案<br/>
+  本頁面為早鳥報名頁。如需企業內訓 / 客製化導入，請來信洽詢。
+</footer>
+
+</body>
+</html>
